@@ -15,4 +15,19 @@ router.post(
   expressAsyncHandler(controllers.addsubCategory)
 );
 
+router.put(
+  "/update/:subCategoryId",
+  auth(endPointsRoles.ADD_SUB_CATEGORY),
+  multerMiddleHost({ extensions: allowedExtensions.image }).single("image"),
+  expressAsyncHandler(controllers.updateSubCategory)
+);
+
+router.delete(
+  "/delete/:subCategoryId",
+  auth(endPointsRoles.ADD_SUB_CATEGORY),
+  expressAsyncHandler(controllers.deleteSubCategory)
+);
+
+router.get("/", expressAsyncHandler(controllers.getAllSubCategories));
+
 export default router;

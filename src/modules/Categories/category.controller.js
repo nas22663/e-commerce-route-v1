@@ -42,6 +42,8 @@ export const addCategory = async (req, res, next) => {
     folderId,
     addedBy: _id,
   };
+  const x = 8;
+  x = 9;
 
   const newCategory = await Category.create(category);
   return res

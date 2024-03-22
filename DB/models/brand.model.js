@@ -23,6 +23,11 @@ const brandSchema = new Schema(
         unique: true,
       },
     },
+    folderId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     addedBy: {
       type: Schema.Types.ObjectId,
       ref: "User",

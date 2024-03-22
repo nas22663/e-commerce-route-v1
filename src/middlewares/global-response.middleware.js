@@ -6,4 +6,6 @@ export const globalResponse = (err, req, res, next) => {
       errLocation: err.stack,
     });
   }
+
+  next();
 };

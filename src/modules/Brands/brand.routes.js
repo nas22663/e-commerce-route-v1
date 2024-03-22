@@ -15,4 +15,19 @@ router.post(
   expressAsyncHandler(controllers.addBrand)
 );
 
+router.delete(
+  "/delete/:brandId",
+  auth(endPointsRoles.DELETE_BRAND),
+  expressAsyncHandler(controllers.deleteBrand)
+);
+
+router.get("/", expressAsyncHandler(controllers.getAllBrands));
+
+router.put(
+  "/:brandId",
+  auth(endPointsRoles.UPDATE_BRAND),
+  multerMiddleHost({ extensions: allowedExtensions.image }).single("image"),
+  expressAsyncHandler(controllers.updateBrand)
+);
+
 export default router;
