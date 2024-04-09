@@ -31,6 +31,8 @@ export const addCategory = async (req, res, next) => {
       folder: `${process.env.MAIN_FOLDER}/categories/${folderId}`,
     });
 
+  req.folder = `${process.env.MAIN_FOLDER}/categories/${folderId}`;
+
   //5- generate the category object
   const category = {
     name,
@@ -42,10 +44,12 @@ export const addCategory = async (req, res, next) => {
     folderId,
     addedBy: _id,
   };
-  const x = 8;
-  x = 9;
 
   const newCategory = await Category.create(category);
+  req.savedDocument = { model: Category, _id: newCategory._id };
+
+  const x = 8;
+  x = 9;
   return res
     .status(201)
     .json({ sucess: true, message: "category created", data: newCategory });

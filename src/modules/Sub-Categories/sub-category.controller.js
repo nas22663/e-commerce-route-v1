@@ -122,7 +122,7 @@ export const deleteSubCategory = async (req, res, next) => {
     "folderId"
   );
 
-  console.log({ subcategoryId: subCategory.categoryId.folderId });
+  // console.log({ subcategoryId: subCategory.categoryId.folderId });
   if (!subCategory)
     return next(new Error("sub-category not found", { cause: 404 }));
 

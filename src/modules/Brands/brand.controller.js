@@ -156,7 +156,7 @@ export const updateBrand = async (req, res, next) => {
   if (!req.file) {
     return next(new Error("image is required", { cause: 400 }));
   }
-  console.log(brand.subCategoryId.categoryId.folderId);
+  // console.log(brand.subCategoryId.categoryId.folderId);
 
   const newPublicId = oldPublicId.split(`${brand.folderId}/`)[1];
   const { secure_url, public_id } =
