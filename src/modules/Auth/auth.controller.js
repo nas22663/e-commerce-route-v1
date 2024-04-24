@@ -7,6 +7,7 @@ export const signUp = async (req, res, next) => {
   // 1-deconstruct data from req.body
   const { username, email, password, age, role, addresses, phoneNumbers } =
     req.body;
+  console.log(req.body);
 
   // 2-validate that data does not exist already
   const isEmailExist = await User.findOne({ email });

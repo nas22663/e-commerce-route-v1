@@ -12,5 +12,3 @@ const db_connection = async () => {
 };
 
 export default db_connection;
-
-// mongodb+srv://nas22663:AWs8GAyVUuYa69GV@cluster0.ciid2yv.mongodb.net/

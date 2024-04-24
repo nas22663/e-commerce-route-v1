@@ -48,8 +48,6 @@ export const addCategory = async (req, res, next) => {
   const newCategory = await Category.create(category);
   req.savedDocument = { model: Category, _id: newCategory._id };
 
-  const x = 8;
-  x = 9;
   return res
     .status(201)
     .json({ sucess: true, message: "category created", data: newCategory });
